@@ -3,6 +3,9 @@
 #download.file("https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip", destfile = sourceData_path)
 #unzip(sourceData_path)
 
+library(dplyr)
+library(tidyr)
+
 ## Change Working Directory to Unzipped Dataset Folder
 setwd(paste(getwd(),"/UCI HAR Dataset", sep = ""))
 
