@@ -25,6 +25,8 @@ A few assumptions are made by this script:
 	https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 	
 	2. Packages "dplyr", "tidyr", "plyr" are installed in the host machine
+	
+	3. Working directory must be set prior to running the script 
 
 ## Code Example
 
