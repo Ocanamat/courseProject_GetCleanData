@@ -5,6 +5,7 @@
 
 library(dplyr)
 library(tidyr)
+library(data.table)
 
 ## Change Working Directory to Unzipped Dataset Folder
 setwd(paste(getwd(),"/UCI HAR Dataset", sep = ""))
@@ -58,6 +59,7 @@ names(tbl_HumanActData) <- valid_column_names
 tbl_stdMean_HumanActData <- select(tbl_HumanActData, 1:2, contains("mean"), contains("std"))
 
 ## Rename column to remove "..." and ".." leftover from writing valid column names operation
+columnNames <- names(tbl_stdMean_HumanActData)
 corrected_columnNames <- gsub("...", ".", columnNames, fixed = TRUE)
 names(tbl_stdMean_HumanActData) <- corrected_columnNames
 corrected_columnNames <- gsub("..", "", corrected_columnNames, fixed = TRUE)
