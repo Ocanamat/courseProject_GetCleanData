@@ -81,6 +81,10 @@ tidyHumanActData <- group_by(tbl_stdMean_HumanActData,activityName, subjectID)
 ## After grouping, summarizing provides the requested tidy Data (5)
 means_tidyHumanActData <- summarize_each(tidyHumanActData, funs = "mean")
 
+## Return tidyData
+tidyData_HumanActivity <- arrange(means_tidyHumanActData, subjectID)
+tidyData_HumanActivity
+
 ## Write the tidy data to an external text file
 #path_writeTidyData <- paste(getwd(), "/tidyData_HumanActivity.txt", sep = "")
-#write.table(x = arrange(means_tidyHumanActData, subjectID), file = path_writeTidyData, row.name=FALSE)
+#write.table(tidyData_HumanActivity, file = path_writeTidyData, row.name=FALSE)
